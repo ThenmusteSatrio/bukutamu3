@@ -1,5 +1,5 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<div class="flex justify-center items-center h-screen">
+<div class="flex justify-center items-center h-screen" id="scan">
     <div class="w-[55%] h-[40%] text-white lg:w-[]" id="reader"></div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

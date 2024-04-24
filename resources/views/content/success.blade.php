@@ -4,7 +4,7 @@
     <link rel="shortcut icon" href="foto/smk.png">
     <title>Success!! Buku Tamu SMK Negeri 2 Magelang</title>
     <link href="css/app.css" rel="stylesheet">
-    <script src="js/app.js" defer></script>
+    <script src="https://smkn2magelang.tech/js/app.js" defer></script>
 </head>
 <body>
     <div id="success"></div>

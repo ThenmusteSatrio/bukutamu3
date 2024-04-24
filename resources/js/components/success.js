@@ -8,7 +8,7 @@ export default function Success() {
         domtoimage.toJpeg(document.getElementById('verf'), { quality: 0.95 })
     .then(function (dataUrl) {
         var link = document.createElement('a');
-        link.download = 'my-image-name.jpeg';
+        link.download = 'verf.jpeg';
         link.href = dataUrl;
         link.click();
     });
@@ -32,35 +32,32 @@ export default function Success() {
         });
     });
     return (
-        <div className=''>
-            <div className="w-[250px] h-[400px] bg-white flex flex-col items-center z-1" style={{backgroundImage: "url('foto/bg.jpg')"}}  id="verf">
-            <div className="mt-10 mb-3">
-                <img className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="foto/p.png" alt="Bordered avatar" />
-            </div>
-            <div className="mb-5">
-                <h1 className="text-gray-800 font-bold text-xl">Verifikasi Berhasil</h1>
-            </div>
-            {/* <div className="text-gray-500 text-xs mb-10 w-10/12 h-[120px]">
-                <div className="truncate overflow-hidden">
-                    <p className="truncate">Anda telah melakukan verifikasi</p>
-                    <p className="truncate">Nama       : Chakim Gilang Satrio</p>
-                    <p className="truncate">Instansi   : SMKN 2 Magelang</p>
+        <div>
+	<div className="absolute w-[300px] h-[350px] bg-white z-10"></div>
+            <div className="w-[250px] h-[300px] bg-white flex flex-col items-center z-1 rounded"  style={{backgroundImage: "url('foto/bg.jpg')"}}  id="verf">
+                <div className="relative flex items-center justify-center">
+                    <img className="w-10 h-10 rounded mt-2" src="img/logo.png" alt=""/>
+                    <span className="absolute bottom-0 left-8 transform translate-y-1/4 w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
                 </div>
-                <p className="line-clamp-3">Keterangan : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, non. Hic quasi incidunt id voluptatem cumque necessitatibus. Vel animi impedit nesciunt et dolor, esse, suscipit illo omnis, temporibus dicta dolore!</p>
-            </div> */}
-            <div className="text-gray-500 text-xs mb-10 w-10/12 h-[120px]">
-                <div className="truncate overflow-hidden">
-                    <p className="truncate">Anda telah melakukan verifikasi</p>
-                    <p className="truncate">Nama       : {window.userData.name}</p>
-                    <p className="truncate">Instansi   : {window.userData.institution}</p>
+                <h1 className="text-blue-600 font-bold text-xl mt-3">Verifikasi Berhasil</h1>
+
+                <div className="px-4 py-3 text-center flex flex-col items-center justify-center">
+                  <p className="text-gray-700 text-sm truncate mb-3">Anda telah melakukan verifikasi</p>
+                  <div className="w-10/12 truncate overflow-hidden">
+                      <p className="text-gray-500 text-xs truncate">Nama : <span className="font-bold text-blue-600">{window.userData.name}</span></p>
+                  </div>
+                  <div className="w-11/12 truncate overflow-hidden">
+                      <p className="text-gray-500 text-xs line-clamp-3">Keterangan : <span className="font-bold text-blue-600"> {window.userData.keterangan} </span> </p>
+                  </div>
+                  <div className="w-10/12 truncate overflow-hidden">
+                      <p className="text-gray-500 text-xs truncate">Instansi : <span className="font-bold text-blue-600">{window.userData.institution}</span></p>
+                  </div>
                 </div>
-                <p className="line-clamp-3">Keterangan : {window.userData.keterangan}</p>
-            </div> 
-            <div>
-                <i className="mdi mdi-check-circle-outline text-green-500 text-7xl"></i>
-            </div> 
-        </div> 
-        </div>
+                <div className="flex justify-center py-4">
+                  <i className="mdi mdi-check-circle-outline text-green-500 text-7xl"></i>
+                </div>
+            </div>
+       </div>
     );
 }
 
